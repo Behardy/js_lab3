@@ -17,19 +17,19 @@ class Contact{
 
 class AddressBook{
     constructor(){
-        this.contact = [ new Contact("KEY", "Bumykey@shineeworld.com", " 440-234-5893", "Idol"),
+        this.contacts = [ new Contact("KEY", "Bumykey@shineeworld.com", " 440-234-5893", "Idol"),
             new Contact("ONEW", "dsdxlmabr@shineeworld.com", " 440-234-5453", "Idol"),
             new Contact("MINHO", "flammingcharisma@shineeworld.com", " 440-235-8874", "Idol"), ];
     }
 add(info){
-this.contact.push(info);
+this.contacts.push(info);
 }
 deleteAt(index){
-    this.contact.splice(index,1);
+    this.contacts.splice(index,1);
 }
 print(){
-    for (let i = 0; i < this.contact.length; i++) {
- console.log(`Name: ${this.contact[i].name}, Email: ${this.contact[i].email}, Phone:${this.contact.phone}, relation: ${this.contact[i].relation}.`)     
+    for (let i = 0; i < this.contacts[i].length; i++) {
+ console.log(`Name: ${this.contacts[i].name}, Email: ${this.contacts[i].email}, Phone:${this.contacts[i].phone}, relation: ${this.contacts[i].relation}.`)     
     }
 }
 //deleteByName(){}
