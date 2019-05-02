@@ -28,16 +28,14 @@ deleteAt(index){
     this.contacts.splice(index,1);
 }
 print(){
-    for (let i = 0; i < this.contacts[i].length; i++) {
+    for (let i = 0; i < this.contacts.length; i++) {
  console.log(`Name: ${this.contacts[i].name}, Email: ${this.contacts[i].email}, Phone:${this.contacts[i].phone}, relation: ${this.contacts[i].relation}.`)     
     }
 }
-//deleteByName(){}
 
 }
 const book = new AddressBook();
-// console.log(book);
-// book.print();
+
 
 while(true){
     let choice = prompt ("Add, Delete, Print or Quit.");
@@ -48,7 +46,10 @@ while(true){
     }else if(choice === "Print"){
         book.print();
     } else if (choice === "Delete") {
-        book.deleteAt(prompt("Which index to delete?"));
+        let index = prompt("Which index to delete?");
+        book.deleteAt(index);
+
+        // book.deleteAt(prompt("Which index to delete?"));
         // let deleteChoice = prompt("Delete by Index or Name?");
         // if(deleteChoice === "Name"){
         //     book.deleteAt(prompt ("Which Name to delete?"))
@@ -57,10 +58,11 @@ while(true){
         // }
         
     } else if(choice === "Add") {
-        book.add(new Contact(prompt ("Please enter a name"),
+        book.add(new Contact(
+        prompt ("Please enter a name"),
         prompt("Please enter an email."),
         prompt("Please enter a phone number."),
-        prompt("Please enter a realationshp.")
+        prompt("Please enter a relation.")
         ));
         
         
